@@ -94,6 +94,9 @@ repositories {
     maven {
         name = "CurseForge Maven"
         url = "https://www.cursemaven.com/"
+        content {
+            includeGroup "curse.maven"
+        }
     }
     ivy {
         name = "GTNH"
