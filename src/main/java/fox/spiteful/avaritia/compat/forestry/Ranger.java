@@ -14,6 +14,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.EnumHelper;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Ranger {
 
     public static Item honey;
@@ -46,14 +50,19 @@ public class Ranger {
         GreedyBeeSpecies.buzz();
         ExpensiveMutation.mutate();
 
-        RecipeManagers.centrifugeManager.addRecipe(20, new ItemStack(LudicrousItems.combs, 1, 1),
-                new ItemStack[]{new ItemStack(Items.dye, 1, 1), new ItemStack(Items.dye, 1, 2),
-                        new ItemStack(Items.dye, 1, 4), new ItemStack(Items.dye, 1, 5),
-                        new ItemStack(Items.dye, 1, 11), new ItemStack(Items.dye, 1, 14)},
-                new int[]{16, 16, 16, 16, 16, 16});
+        final float centrifugeChanceA = 0.16f;
+        Map<ItemStack, Float> products = new HashMap<>();
+        products.put(new ItemStack(Items.dye, 1, 1), centrifugeChanceA);
+        products.put(new ItemStack(Items.dye, 1, 2), centrifugeChanceA);
+        products.put(new ItemStack(Items.dye, 1, 4), centrifugeChanceA);
+        products.put(new ItemStack(Items.dye, 1, 5), centrifugeChanceA);
+        products.put(new ItemStack(Items.dye, 1, 11), centrifugeChanceA);
+        products.put(new ItemStack(Items.dye, 1, 14), centrifugeChanceA);
+        RecipeManagers.centrifugeManager.addRecipe(20, new ItemStack(LudicrousItems.combs, 1, 1), products);
 
+        final float centrifugeChanceB = 1.0f;
         RecipeManagers.centrifugeManager.addRecipe(20, new ItemStack(LudicrousItems.combs, 1, 0),
-                new ItemStack(LudicrousItems.beesource, 1, 1));
+                Collections.singletonMap(new ItemStack(LudicrousItems.beesource, 1, 1), centrifugeChanceB));
 
         Grinder.catalyst.getInput().add(new ItemStack(panel, 1, 6));
         Grinder.catalyst.getInput().add(new ItemStack(LudicrousItems.beesource, 1, 0));
