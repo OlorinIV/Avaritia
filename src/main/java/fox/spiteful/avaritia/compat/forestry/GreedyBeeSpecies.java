@@ -186,16 +186,6 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
     }
 
     @Override
-    public HashMap<ItemStack, Integer> getProducts() {
-        return legacyProducts;
-    }
-
-    @Override
-    public HashMap<ItemStack, Integer> getSpecialty() {
-        return legacySpecialties;
-    }
-
-    @Override
     public IBeeRoot getRoot() {
         return BeeManager.beeRoot;
     }

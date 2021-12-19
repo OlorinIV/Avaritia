@@ -1,10 +1,10 @@
 [
 {
-  "modid": "Avaritia",
-  "name": "Avaritia",
+  "modid": "${modId}",
+  "name": "${modName}",
   "description": "A mod to see how hard people are willing to grind.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version": "${modVersion}",
+  "mcversion": "${minecraftVersion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["SpitefulFox", "TTFTCUTS"],
