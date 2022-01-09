@@ -2,9 +2,9 @@
 # Items
 item.avaritia_resource.diamond_lattice.name=Diamond Lattice
 item.avaritia_resource.crystal_matrix_ingot.name=Crystal Matrix Ingot
-item.avaritia_resource.neutron_pile.name=Pile of Neutrons
-item.avaritia_resource.neutron_nugget.name=Neutronium Nugget
-item.avaritia_resource.neutronium_ingot.name=Neutronium Ingot
+item.avaritia_resource.neutron_pile.name=Pile of Cosmic Neutrons
+item.avaritia_resource.neutron_nugget.name=Cosmic Neutronium Nugget
+item.avaritia_resource.neutronium_ingot.name=Cosmic Neutronium Ingot
 item.avaritia_resource.infinity_catalyst.name=Infinity Catalyst
 item.avaritia_resource.infinity_ingot.name=Infinity Ingot
 item.avaritia_resource.record_fragment.name=Record Fragment
