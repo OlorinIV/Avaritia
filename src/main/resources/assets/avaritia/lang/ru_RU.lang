@@ -50,7 +50,7 @@ item.avaritia_fracturedore.name=Неизвестная сломанная руд
 item.avaritia_fracturedore.prefix=Сломана
 item.avaritia_mattercluster.name=Кластер материи
 item.avaritia_mattercluster.full.name=Критический кластер материи
-item.akashic_record.name=Записи Акаши
+item.akashic_record.name=Хроники Акаши
 item.orb_armok.name=Кровавый шар Армока
 item.extremely_primordial_pearl.name=Первозданная жемчужина
 #
@@ -79,7 +79,7 @@ tile.block_crystal_matrix.name=Кристаллическая матрица
 tile.block_neutronium.name=Блок нейтрония
 tile.block_infinity.name=Блок бесконечности
 tile.dire_crafting.name=Ужасный верстак
-tile.neutron_collector.name=Сборщик нейтрония
+tile.neutron_collector.name=Сборщик нейтронов
 tile.neutronium_compressor.name=Компрессор нейтрония
 #
 
@@ -106,7 +106,7 @@ achievement.avaritia:dire_crafting.desc=Используйте обычные в
 achievement.avaritia:dire_uncrafting=Будьте проще!
 achievement.avaritia:dire_uncrafting.desc=Закончите эпизод
 achievement.avaritia:collector=Сейчас мы играем в игру Ожидания
-achievement.avaritia:collector.desc=Создайте свой первый Сборщик нейтрония и приготовьтесь к прогрузке чанков
+achievement.avaritia:collector.desc=Создайте свой первый Сборщик нейтронов и приготовьтесь к прогрузке чанков
 achievement.avaritia:neutronium=Игра в Ожидание - отстой! 
 achievement.avaritia:neutronium.desc=Создайте свой первый слиток нейтрония
 achievement.avaritia:singularity=Горизонт событий
@@ -123,7 +123,7 @@ achievement.avaritia:creative_kill.desc="От этого греха пали и 
 
 # Misc
 itemGroup.avaritia=Avaritia
-container.neutron_collector=Сборщик нейтрония
+container.neutron_collector=Сборщик нейтронов
 container.neutronium_compressor=Компрессор нейтрония
 tc.aspect.terminus=The End of Games, Apocalypse, Grindstones
 crafting.extreme=Ужасающий крафт
@@ -196,6 +196,6 @@ avaritia.allele.lifespanArtificial=Artificial
 avaritia.research_name.BIG_PEARL=Выдающаяся первозданная жемчужина
 avaritia.research_text.BIG_PEARL=Потому что вы всегда можете сделать больше
 avaritia.research_page.BIG_PEARL.1=Конечно, сингулярная жемчужина довольно мощная, но вы думаете, что она может быть еще более мощной.<BR>Соединив несколько сингулярных жемчужин вместе на алтаре инфузии, вы создадите еще более мощный предмет: Первозданную жемчужину.
-avaritia.research_name.AKASHIC=Записи Акаши
+avaritia.research_name.AKASHIC=Хроники Акаши
 avaritia.research_text.AKASHIC=Больше знаний, чем вам может понадобится
-avaritia.research_page.AKASHIC.1=Вы достаточно изучили мир, чтобы разорвать ткань реальности и войти во Внешние королевства, но, конечно, всегда есть место для более глубоких исследований, верно? <BR>Записи Акаши дадут вам все аспекты мира для исследований и еще немного больше.
+avaritia.research_page.AKASHIC.1=Вы достаточно изучили мир, чтобы разорвать ткань реальности и войти во Внешние земли, но, конечно, всегда есть место для более глубоких исследований, верно? <BR>Хроники Акаши дадут вам все аспекты мира для исследований и еще немного больше.
