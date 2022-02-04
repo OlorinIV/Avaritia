@@ -13,6 +13,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import fox.spiteful.avaritia.achievements.Achievements;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.compat.Compat;
+import fox.spiteful.avaritia.compat.botania.alfheim.Alfheim;
 import fox.spiteful.avaritia.crafting.Gregorizer;
 import fox.spiteful.avaritia.crafting.Grinder;
 import fox.spiteful.avaritia.crafting.Mincer;
@@ -21,10 +22,7 @@ import fox.spiteful.avaritia.gui.GooeyHandler;
 import fox.spiteful.avaritia.items.ItemFracturedOre;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = "Avaritia", name = "Avaritia", dependencies = "after:Thaumcraft;after:AWWayofTime;after:Botania")
@@ -62,6 +60,8 @@ public class Avaritia {
 
         LudicrousEntities.letLooseTheDogsOfWar();
         proxy.prepareForPretty();
+        if(Compat.botan && Config.alfheim)
+        	Alfheim.packYourBags();
     }
 
     @EventHandler
