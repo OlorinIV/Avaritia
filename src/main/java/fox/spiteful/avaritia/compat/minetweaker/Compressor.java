@@ -3,14 +3,12 @@ package fox.spiteful.avaritia.compat.minetweaker;
 import fox.spiteful.avaritia.crafting.CompressOreRecipe;
 import fox.spiteful.avaritia.crafting.CompressorManager;
 import fox.spiteful.avaritia.crafting.CompressorRecipe;
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import minetweaker.IUndoableAction;
 import minetweaker.MineTweakerAPI;
 import minetweaker.api.item.IIngredient;
 import minetweaker.api.item.IItemStack;
 import minetweaker.api.oredict.IOreDictEntry;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
@@ -90,8 +88,8 @@ public class Compressor {
         @Override
         public void apply(){
 
-            for(Object obj : ExtremeCraftingManager.getInstance().getRecipeList()){
-                if(obj instanceof IRecipe){
+            for(Object obj : CompressorManager.getRecipes()){
+                if(obj instanceof CompressorRecipe){
                     CompressorRecipe craft = (CompressorRecipe)obj;
                     if(craft.getOutput().isItemEqual(remove)) {
                         recipe = craft;
