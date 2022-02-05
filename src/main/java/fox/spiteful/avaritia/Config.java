@@ -51,6 +51,7 @@ public class Config {
     public static boolean steel = true;
     public static boolean nickel = true;
     public static boolean enderium = true;
+    public static boolean ultimateBalance = true;
 
     public static int modifier = 0;
     public static int multiplier = 0;
@@ -107,6 +108,7 @@ public class Config {
             steel = conf.get("materials", "Steel", true).getBoolean(true);
             enderium = conf.get("materials", "Enderium", true).getBoolean(true);
             darksteel = conf.get("compatibility", "DarkSteel", true).getBoolean(true);
+            ultimateBalance = conf.get("materials", "Clay", true).getBoolean(true);
 
             modifier = conf.get("balance!", "Cost Modifier", 0, "Added to the existing modifier to make prices more expensive or cheaper. Can be negative.").getInt(0);
             multiplier = conf.get("balance!", "Cost Multiplier", 0, "Added to the existing multiplier to make prices more expensive or cheaper. Can be negative.").getInt(0);
