@@ -6,7 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import fox.spiteful.avaritia.Avaritia;
-import fox.spiteful.avaritia.compat.botania.alfheim.TeleportHelper;
+import fox.spiteful.avaritia.Lumberjack;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -45,21 +45,20 @@ public class ItemMorvInABox extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
     {
-		/*//if (world.isRemote) {
+		/*if (world.isRemote) {
 			Lumberjack.info("DESTROY SPACE");
 			WorldProvider p = world.provider;//DimensionManager.getProvider(0);
 			Lumberjack.info(p);
 			p.setSkyRenderer(new ApocalypseSkyRenderer());
 			p.setCloudRenderer(new ApocalypseCloudRenderer());
 			Lumberjack.info(p.getCloudRenderer());
-		//}*/
-		/*if (DimensionManager.getWorld(0) == world) {
+		}
+		if (DimensionManager.getWorld(0) == world) {
 			player.travelToDimension(13);
 		} else {
 			player.travelToDimension(0);
 		}*/
 
-		TeleportHelper.travelToOrFromAlfheim(player);
         return stack;
     }
 	

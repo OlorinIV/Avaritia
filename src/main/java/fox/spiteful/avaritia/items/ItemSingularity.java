@@ -83,7 +83,7 @@ public class ItemSingularity extends Item implements IHaloRenderItem {
     @Override
     public EnumRarity getRarity(ItemStack stack)
     {
-        if(stack.getItemDamage() == 10)
+        if(stack.getItemDamage() == 11)
             return LudicrousItems.cosmic;
         return EnumRarity.uncommon;
     }
@@ -93,7 +93,7 @@ public class ItemSingularity extends Item implements IHaloRenderItem {
     public void addInformation(ItemStack item, EntityPlayer player, List tooltip, boolean wut) {
 
         int meta = item.getItemDamage();
-        if (meta == 10) {
+        if (meta == 11) {
             //tooltip.add(EnumChatFormatting.DARK_GRAY +""+ EnumChatFormatting.ITALIC + StatCollector.translateToLocal("tooltip.claybalance.desc"));
             tooltip.add(LudicrousText.makeFabulous(StatCollector.translateToLocal("tooltip.claybalance.desc")));
         }
