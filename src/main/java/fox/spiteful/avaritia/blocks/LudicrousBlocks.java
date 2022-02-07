@@ -19,7 +19,6 @@ public class LudicrousBlocks {
      */
     public static Block resource_block;
     public static Block dire_crafting;
-    public static Block auto_dire_crafting;
     public static Block neutron_collector;
     public static Block compressor;
 
