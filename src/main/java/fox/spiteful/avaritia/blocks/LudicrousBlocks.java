@@ -6,8 +6,6 @@ import fox.spiteful.avaritia.tile.TileEntityCompressor;
 import fox.spiteful.avaritia.tile.TileEntityDireCrafting;
 import fox.spiteful.avaritia.tile.TileEntityNeutron;
 import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 
 public class LudicrousBlocks {

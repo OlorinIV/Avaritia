@@ -1,5 +1,6 @@
 package fox.spiteful.avaritia.crafting;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.Config;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
@@ -9,7 +10,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -48,6 +48,9 @@ public class Grinder {
         GameRegistry.addShapedRecipe(new ItemStack(LudicrousItems.resource, 9, 4), "C", 'C', new ItemStack(LudicrousBlocks.resource_block, 1, 0));
         GameRegistry.addShapedRecipe(new ItemStack(LudicrousBlocks.resource_block, 1, 1), "CCC", "CCC", "CCC", 'C', new ItemStack(LudicrousItems.resource, 1, 6));
         GameRegistry.addShapedRecipe(new ItemStack(LudicrousItems.resource, 9, 6), "C", 'C', new ItemStack(LudicrousBlocks.resource_block, 1, 1));
+        
+        GameRegistry.addShapedRecipe(new ItemStack(LudicrousItems.resource, 13, 8), "CCC", "CIC", "CCC", 'C', new ItemStack(Blocks.coal_block, 1), 'I', new ItemStack(LudicrousItems.resource, 1, 1));
+        GameRegistry.addShapedRecipe(new ItemStack(LudicrousItems.resource, 1, 9), " I ", "ISI", " I ", 'I', new ItemStack(LudicrousItems.resource, 1, 4), 'S', new ItemStack(Items.stick));
 
         ExtremeCraftingManager.getInstance().addRecipe(new ItemStack(LudicrousBlocks.neutron_collector, 1),
                 "IIQQQQQII",
@@ -322,6 +325,11 @@ public class Grinder {
         }
         if(Config.darksteel && !OreDictionary.getOres("blockDarkSteel").isEmpty()){
             catalyst.getInput().add(OreDictionary.getOres("blockDarkSteel"));
+        }
+
+        if(Config.ultimateBalance && (Loader.isModLoaded("Botania") || Loader.isModLoaded("Mekanism"))) {
+            catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 11));
+            CompressorManager.addRecipe(new ItemStack(LudicrousItems.singularity, 1, 11), 150, new ItemStack(Items.clay_ball, 1));
         }
     }
 }

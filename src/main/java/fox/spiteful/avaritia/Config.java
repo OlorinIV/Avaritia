@@ -12,6 +12,7 @@ public class Config {
     public static boolean bedrockBreaker = true;
     public static boolean boringFood = false;
     public static boolean fractured = false;
+    public static boolean fast = true;
 
     public static boolean thaumic = true;
     public static boolean sc2 = true;
@@ -47,6 +48,7 @@ public class Config {
     public static boolean steel = true;
     public static boolean nickel = true;
     public static boolean enderium = true;
+    public static boolean ultimateBalance = true;
 
     public static int modifier = 0;
     public static int multiplier = 0;
@@ -62,6 +64,7 @@ public class Config {
             bedrockBreaker = conf.get("general", "Break Bedrock", bedrockBreaker, "Disable if you don't want the World Breaker to break unbreakable blocks").getBoolean(true);
             boringFood = conf.get("general", "Boring Food", boringFood, "Enable to keep the Ultimate Stew and Cosmic Meatballs from grabbing more ingredients").getBoolean(false);
             fractured = conf.get("general", "Fractured Ores", fractured, "Enable if you don't have Rotarycraft installed and want some buggy fractured ores").getBoolean(false);
+            fast = conf.get("general", "Gotta Go Fast", fast, "Disable if the Infinity Boots' speed boost is too ridiculous").getBoolean(true);
 
             conf.addCustomCategoryComment("compatibility", "Disable to stop compatibility with that particular mod. Will not use the mod in recipes or add new items for that mod.");
             thaumic = conf.get("compatibility", "Thaumcraft", true).getBoolean(true);
@@ -99,6 +102,7 @@ public class Config {
             steel = conf.get("materials", "Steel", true).getBoolean(true);
             enderium = conf.get("materials", "Enderium", true).getBoolean(true);
             darksteel = conf.get("compatibility", "DarkSteel", true).getBoolean(true);
+            ultimateBalance = conf.get("materials", "Clay", true).getBoolean(true);
 
             modifier = conf.get("balance!", "Cost Modifier", 0, "Added to the existing modifier to make prices more expensive or cheaper. Can be negative.").getInt(0);
             multiplier = conf.get("balance!", "Cost Multiplier", 0, "Added to the existing multiplier to make prices more expensive or cheaper. Can be negative.").getInt(0);
