@@ -24,7 +24,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = "Avaritia", name = "Avaritia", version = "GRADLETOKEN_VERSION" dependencies = "after:Thaumcraft;after:AWWayofTime;after:Botania")
+@Mod(modid = "Avaritia", name = "Avaritia", version = "GRADLETOKEN_VERSION", dependencies = "after:Thaumcraft;after:AWWayofTime;after:Botania")
 public class Avaritia {
     @Instance
     public static Avaritia instance;
