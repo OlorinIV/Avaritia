@@ -107,7 +107,7 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
     public void loadCraftingRecipes(ItemStack result) {
         List<IRecipe> allrecipes = ExtremeCraftingManager.getInstance().getRecipeList();
         for (IRecipe irecipe : allrecipes) {
-            if (NEIServerUtils.areStacksSameTypeCrafting(irecipe.getRecipeOutput(), result)) {
+            if (NEIServerUtils.areStacksSameTypeCraftingWithNBT(irecipe.getRecipeOutput(), result)) {
                 CachedExtremeShapelessRecipe recipe = null;
                 if (irecipe instanceof ExtremeShapelessRecipe)
                     recipe = shapelessRecipe((ExtremeShapelessRecipe) irecipe);

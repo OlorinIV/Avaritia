@@ -124,7 +124,7 @@ public class ExtremeShapedRecipeHandler extends ShapedRecipeHandler
     @Override
     public void loadCraftingRecipes(ItemStack result) {
         for (IRecipe irecipe : (List<IRecipe>) ExtremeCraftingManager.getInstance().getRecipeList()) {
-            if (NEIServerUtils.areStacksSameTypeCrafting(irecipe.getRecipeOutput(), result)) {
+            if (NEIServerUtils.areStacksSameTypeCraftingWithNBT(irecipe.getRecipeOutput(), result)) {
                 CachedExtremeRecipe recipe = null;
                 if (irecipe instanceof ExtremeShapedRecipe)
                     recipe = new CachedExtremeRecipe((ExtremeShapedRecipe) irecipe);
