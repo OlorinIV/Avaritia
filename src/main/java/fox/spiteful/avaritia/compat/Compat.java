@@ -406,7 +406,7 @@ public class Compat {
                 te = false;
             }
         }
-        if(!Loader.isModLoaded("dreammaster")) {
+        if(!Loader.isModLoaded("dreamcraft")) {
             if (Loader.isModLoaded("witchery") && Config.witch) {
                 try {
                     Item ingredient = getItem("witchery", "ingredient");
@@ -431,7 +431,7 @@ public class Compat {
                     Lumberjack.log(Level.INFO, e, "Avaritia suffered from Curse of the Incompatibility.");
                 }
             }
-        } else if (Loader.isModLoaded("dreammaster") && Loader.isModLoaded("witchery") && Config.witch){
+        } else if (Loader.isModLoaded("dreamcraft") && Loader.isModLoaded("witchery") && Config.witch){
             Lumberjack.log(Level.INFO, "Infinity Egg recipe has been redirected into NHCore script because boubou wanted to boink me if it didn't");
         }
 
