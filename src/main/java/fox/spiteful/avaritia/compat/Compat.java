@@ -406,15 +406,15 @@ public class Compat {
                 te = false;
             }
         }
+        if(!Loader.isModLoaded("dreammaster")) {
+            if (Loader.isModLoaded("witchery") && Config.witch) {
+                try {
+                    Item ingredient = getItem("witchery", "ingredient");
+                    Grinder.catalyst.getInput().add(new ItemStack(ingredient, 1, 150));
 
-        if(Loader.isModLoaded("witchery") && Config.witch){
-            try {
-                Item ingredient = getItem("witchery", "ingredient");
-                Grinder.catalyst.getInput().add(new ItemStack(ingredient, 1, 150));
+                    Block egg = getBlock("witchery", "infinityegg");
 
-                Block egg = getBlock("witchery", "infinityegg");
-
-                ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(new ItemStack(egg, 1, 0),
+                    ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(new ItemStack(egg, 1, 0),
                         "   NNN   ",
                         "  NNNNN  ",
                         "  NNNNN  ",
@@ -427,9 +427,9 @@ public class Compat {
                         'N', new ItemStack(LudicrousItems.resource, 1, 4),
                         'E', new ItemStack(Blocks.dragon_egg),
                         'I', new ItemStack(LudicrousItems.resource, 1, 6));
-            }
-            catch (Throwable e){
-                Lumberjack.log(Level.INFO, e, "Avaritia suffered from Curse of the Incompatibility.");
+                } catch (Throwable e) {
+                    Lumberjack.log(Level.INFO, e, "Avaritia suffered from Curse of the Incompatibility.");
+                }
             }
         }
 
