@@ -17,7 +17,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.crafting.Grinder;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -425,7 +425,7 @@ public class Compat {
                         " NNNINNN ",
                         "  NNNNN  ",
                         'N', new ItemStack(LudicrousItems.resource, 1, 4),
-                        'E', new ItemStack(Items.egg),
+                        'E', new ItemStack(Blocks.dragon_egg),
                         'I', new ItemStack(LudicrousItems.resource, 1, 6));
             }
             catch (Throwable e){
@@ -442,7 +442,7 @@ public class Compat {
                 Lumberjack.log(Level.INFO, e, "Avaritia couldn't figure out how torque works.");
             }
         }
-        
+
         if(Loader.isModLoaded("Tails")){
             try
             {
