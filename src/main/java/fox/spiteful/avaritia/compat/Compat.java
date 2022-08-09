@@ -431,8 +431,6 @@ public class Compat {
                     Lumberjack.log(Level.INFO, e, "Avaritia suffered from Curse of the Incompatibility.");
                 }
             }
-        } else if (Loader.isModLoaded("dreamcraft") && Loader.isModLoaded("witchery") && Config.witch){
-            Lumberjack.log(Level.INFO, "Infinity Egg recipe has been redirected into NHCore script because boubou wanted to boink me if it didn't");
         }
 
         if(Loader.isModLoaded("RotaryCraft") && Config.rotisserie){
