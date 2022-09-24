@@ -52,7 +52,7 @@ item.extremely_primordial_pearl.name=极元始珍珠
 tile.compressed_workbench.name=压缩工作台
 tile.very_compressed_workbench.name=二重压缩工作台
 tile.block_crystal_matrix.name=水晶矩阵
-tile.block_neutronium.name=中子态素块
+tile.block_neutronium.name=宇宙中子态素块
 tile.block_infinity.name=无尽之块
 tile.block_gaia.name=盖亚块
 tile.dire_crafting.name=终极工作台
@@ -142,7 +142,7 @@ item.Wand.infinity.rod=宇宙中子态素
 item.Wand.matrix.cap=水晶缠绕
 #
 # Tinkers Construct
-material.avaritia_neutronium=宇宙中子素
+material.avaritia_neutronium=宇宙中子态素
 material.avaritia_neutronium.ability=千斤坠沉
 material.avaritia_infinitymetal=无尽
 material.avaritia_infinitymetal.ability=寰宇
@@ -178,4 +178,3 @@ avaritia.research_page.BIG_PEARL.1=当然,元始珍珠相当强大,但是你认�
 avaritia.research_name.AKASHIC=阿卡西记录
 avaritia.research_text.AKASHIC=比你想要的更多知识(低配慎用)
 avaritia.research_page.AKASHIC.1=你对世界研究得足够深入，能够破碎虚空并进入外域,但是肯定还有进行更多研究的空间,对吧?<BR><BR>阿卡西记录将为你提供世界上所有的研究点,然后再多一点.
-
