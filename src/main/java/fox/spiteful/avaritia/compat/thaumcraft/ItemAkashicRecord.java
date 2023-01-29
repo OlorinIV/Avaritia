@@ -1,9 +1,7 @@
 package fox.spiteful.avaritia.compat.thaumcraft;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import fox.spiteful.avaritia.Avaritia;
-import fox.spiteful.avaritia.compat.Compat;
+import java.util.List;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -11,16 +9,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.Thaumcraft;
 import thaumcraft.common.lib.network.PacketHandler;
 import thaumcraft.common.lib.network.playerdata.PacketAspectPool;
-
-import java.util.List;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import fox.spiteful.avaritia.Avaritia;
+import fox.spiteful.avaritia.compat.Compat;
 
 public class ItemAkashicRecord extends Item {
 
-    public ItemAkashicRecord(){
+    public ItemAkashicRecord() {
         setUnlocalizedName("akashic_record");
         setTextureName("avaritia:akashic_record");
         setCreativeTab(Avaritia.tab);
@@ -28,16 +29,21 @@ public class ItemAkashicRecord extends Item {
 
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-        if(world.isRemote)
-            return stack;
+        if (world.isRemote) return stack;
 
-        for(Aspect aspect : Aspect.aspects.values()) {
+        for (Aspect aspect : Aspect.aspects.values()) {
             Thaumcraft.proxy.playerKnowledge.addAspectPool(player.getCommandSenderName(), aspect, (short) 999);
-            PacketHandler.INSTANCE.sendTo(new PacketAspectPool(aspect.getTag(), (short)999, Short.valueOf(Thaumcraft.proxy.playerKnowledge.getAspectPoolFor(player.getCommandSenderName(), aspect))), (EntityPlayerMP) player);
+            PacketHandler.INSTANCE.sendTo(
+                    new PacketAspectPool(
+                            aspect.getTag(),
+                            (short) 999,
+                            Short.valueOf(
+                                    Thaumcraft.proxy.playerKnowledge
+                                            .getAspectPoolFor(player.getCommandSenderName(), aspect))),
+                    (EntityPlayerMP) player);
         }
 
-        if (!player.capabilities.isCreativeMode)
-        {
+        if (!player.capabilities.isCreativeMode) {
             --stack.stackSize;
         }
         return stack;
@@ -56,8 +62,7 @@ public class ItemAkashicRecord extends Item {
             tag.setString("rod", "infinity");
             cosmic.setTagCompound(tag);
             list.add(cosmic);
-        }
-        catch (Throwable e){}
+        } catch (Throwable e) {}
     }
 
 }

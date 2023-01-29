@@ -1,9 +1,10 @@
 package fox.spiteful.avaritia;
 
-import net.minecraftforge.common.config.Configuration;
-import org.apache.logging.log4j.Level;
-
 import java.io.File;
+
+import net.minecraftforge.common.config.Configuration;
+
+import org.apache.logging.log4j.Level;
 
 public class Config {
 
@@ -53,20 +54,48 @@ public class Config {
     public static int modifier = 0;
     public static int multiplier = 0;
 
-    public static void configurate(File file){
+    public static void configurate(File file) {
         Configuration conf = new Configuration(file);
 
         try {
             conf.load();
 
-            craftingOnly = conf.get("general", "Crafting Only", craftingOnly, "Enable to completely disable most of the mod except for the Dire Crafting table. For if you just want the mod for Minetweaking purposes.").getBoolean(false);
-            endStone = conf.get("general", "Use End Stone", endStone, "Disable to take end stone out of recipes").getBoolean(true);
-            bedrockBreaker = conf.get("general", "Break Bedrock", bedrockBreaker, "Disable if you don't want the World Breaker to break unbreakable blocks").getBoolean(true);
-            boringFood = conf.get("general", "Boring Food", boringFood, "Enable to keep the Ultimate Stew and Cosmic Meatballs from grabbing more ingredients").getBoolean(false);
-            fractured = conf.get("general", "Fractured Ores", fractured, "Enable if you don't have Rotarycraft installed and want some buggy fractured ores").getBoolean(false);
-            fast = conf.get("general", "Gotta Go Fast", fast, "Disable if the Infinity Boots' speed boost is too ridiculous").getBoolean(true);
+            craftingOnly = conf.get(
+                    "general",
+                    "Crafting Only",
+                    craftingOnly,
+                    "Enable to completely disable most of the mod except for the Dire Crafting table. For if you just want the mod for Minetweaking purposes.")
+                    .getBoolean(false);
+            endStone = conf.get("general", "Use End Stone", endStone, "Disable to take end stone out of recipes")
+                    .getBoolean(true);
+            bedrockBreaker = conf.get(
+                    "general",
+                    "Break Bedrock",
+                    bedrockBreaker,
+                    "Disable if you don't want the World Breaker to break unbreakable blocks").getBoolean(true);
+            boringFood = conf
+                    .get(
+                            "general",
+                            "Boring Food",
+                            boringFood,
+                            "Enable to keep the Ultimate Stew and Cosmic Meatballs from grabbing more ingredients")
+                    .getBoolean(false);
+            fractured = conf
+                    .get(
+                            "general",
+                            "Fractured Ores",
+                            fractured,
+                            "Enable if you don't have Rotarycraft installed and want some buggy fractured ores")
+                    .getBoolean(false);
+            fast = conf.get(
+                    "general",
+                    "Gotta Go Fast",
+                    fast,
+                    "Disable if the Infinity Boots' speed boost is too ridiculous").getBoolean(true);
 
-            conf.addCustomCategoryComment("compatibility", "Disable to stop compatibility with that particular mod. Will not use the mod in recipes or add new items for that mod.");
+            conf.addCustomCategoryComment(
+                    "compatibility",
+                    "Disable to stop compatibility with that particular mod. Will not use the mod in recipes or add new items for that mod.");
             thaumic = conf.get("compatibility", "Thaumcraft", true).getBoolean(true);
             sc2 = conf.get("compatibility", "Steve's Carts 2", true).getBoolean(true);
             ae2 = conf.get("compatibility", "Applied Energistics 2", true).getBoolean(true);
@@ -93,7 +122,9 @@ public class Config {
             witch = conf.get("compatibility", "Witchery", true).getBoolean(true);
             rotisserie = conf.get("compatibility", "Rotarycraft", true).getBoolean(true);
 
-            conf.addCustomCategoryComment("materials", "Disable to stop using that material in recipes. Useful if a mod adds unobtainable placeholder ores.");
+            conf.addCustomCategoryComment(
+                    "materials",
+                    "Disable to stop using that material in recipes. Useful if a mod adds unobtainable placeholder ores.");
             copper = conf.get("materials", "Copper", true).getBoolean(true);
             tin = conf.get("materials", "Tin", true).getBoolean(true);
             silver = conf.get("materials", "Silver", true).getBoolean(true);
@@ -104,13 +135,22 @@ public class Config {
             darksteel = conf.get("compatibility", "DarkSteel", true).getBoolean(true);
             ultimateBalance = conf.get("materials", "Clay", true).getBoolean(true);
 
-            modifier = conf.get("balance!", "Cost Modifier", 0, "Added to the existing modifier to make prices more expensive or cheaper. Can be negative.").getInt(0);
-            multiplier = conf.get("balance!", "Cost Multiplier", 0, "Added to the existing multiplier to make prices more expensive or cheaper. Can be negative.").getInt(0);
-        }
-        catch(Exception e){
+            modifier = conf
+                    .get(
+                            "balance!",
+                            "Cost Modifier",
+                            0,
+                            "Added to the existing modifier to make prices more expensive or cheaper. Can be negative.")
+                    .getInt(0);
+            multiplier = conf.get(
+                    "balance!",
+                    "Cost Multiplier",
+                    0,
+                    "Added to the existing multiplier to make prices more expensive or cheaper. Can be negative.")
+                    .getInt(0);
+        } catch (Exception e) {
             Lumberjack.log(Level.ERROR, e, "Avaritia couldn't find its config!");
-        }
-        finally {
+        } finally {
             conf.save();
         }
     }

@@ -1,10 +1,7 @@
 package fox.spiteful.avaritia.compat.forestry;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import fox.spiteful.avaritia.Avaritia;
-import fox.spiteful.avaritia.items.LudicrousItems;
-import fox.spiteful.avaritia.render.IHaloRenderItem;
+import java.util.List;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
@@ -13,11 +10,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 
-import java.util.List;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import fox.spiteful.avaritia.Avaritia;
+import fox.spiteful.avaritia.items.LudicrousItems;
+import fox.spiteful.avaritia.render.IHaloRenderItem;
 
 public class ItemBeesource extends Item implements IHaloRenderItem {
 
-    private static final String[] types = new String[]{"infinity_drop", "dust"};
+    private static final String[] types = new String[] { "infinity_drop", "dust" };
 
     @SideOnly(Side.CLIENT)
     public IIcon[] icons;
@@ -25,7 +26,7 @@ public class ItemBeesource extends Item implements IHaloRenderItem {
     @SideOnly(Side.CLIENT)
     public IIcon halo;
 
-    public ItemBeesource(){
+    public ItemBeesource() {
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
         this.setUnlocalizedName("avaritia_beesource");
@@ -64,9 +65,8 @@ public class ItemBeesource extends Item implements IHaloRenderItem {
     }
 
     @Override
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        switch(stack.getItemDamage()){
+    public EnumRarity getRarity(ItemStack stack) {
+        switch (stack.getItemDamage()) {
             case 0:
                 return LudicrousItems.cosmic;
             case 1:

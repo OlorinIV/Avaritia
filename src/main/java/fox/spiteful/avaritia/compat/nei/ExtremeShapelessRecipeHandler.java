@@ -1,30 +1,32 @@
 package fox.spiteful.avaritia.compat.nei;
 
-import codechicken.lib.gui.GuiDraw;
-import codechicken.nei.recipe.RecipeInfo;
-import codechicken.nei.recipe.ShapelessRecipeHandler;
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import fox.spiteful.avaritia.crafting.ExtremeShapelessRecipe;
-import fox.spiteful.avaritia.gui.GUIExtremeCrafting;
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.inventory.Container;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
-import codechicken.nei.NEIServerUtils;
-import codechicken.nei.PositionedStack;
-import net.minecraft.util.StatCollector;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
-import org.lwjgl.opengl.GL11;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.inventory.Container;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.StatCollector;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-    public class CachedExtremeShapelessRecipe extends CachedRecipe
-    {
+import org.lwjgl.opengl.GL11;
+
+import codechicken.lib.gui.GuiDraw;
+import codechicken.nei.NEIServerUtils;
+import codechicken.nei.PositionedStack;
+import codechicken.nei.recipe.RecipeInfo;
+import codechicken.nei.recipe.ShapelessRecipeHandler;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import fox.spiteful.avaritia.crafting.ExtremeShapelessRecipe;
+import fox.spiteful.avaritia.gui.GUIExtremeCrafting;
+
+public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler {
+
+    public class CachedExtremeShapelessRecipe extends CachedRecipe {
+
         public CachedExtremeShapelessRecipe() {
             ingredients = new ArrayList<PositionedStack>();
         }
@@ -46,7 +48,10 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
         public void setIngredients(List<?> items) {
             ingredients.clear();
             for (int ingred = 0; ingred < items.size(); ingred++) {
-                PositionedStack stack = new PositionedStack(items.get(ingred), 3 + (ingred % 9) * 18, 3 + (ingred / 9) * 18);
+                PositionedStack stack = new PositionedStack(
+                        items.get(ingred),
+                        3 + (ingred % 9) * 18,
+                        3 + (ingred / 9) * 18);
                 stack.setMaxSize(1);
                 ingredients.add(stack);
             }
@@ -85,8 +90,7 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
                 else if (irecipe instanceof ShapelessOreRecipe)
                     recipe = forgeExtremeShapelessRecipe((ShapelessOreRecipe) irecipe);
 
-                if (recipe == null)
-                    continue;
+                if (recipe == null) continue;
 
                 arecipes.add(recipe);
             }
@@ -106,8 +110,7 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
                 else if (irecipe instanceof ShapelessOreRecipe)
                     recipe = forgeExtremeShapelessRecipe((ShapelessOreRecipe) irecipe);
 
-                if (recipe == null)
-                    continue;
+                if (recipe == null) continue;
 
                 arecipes.add(recipe);
             }
@@ -119,13 +122,11 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
         List<IRecipe> allrecipes = ExtremeCraftingManager.getInstance().getRecipeList();
         for (IRecipe irecipe : allrecipes) {
             CachedExtremeShapelessRecipe recipe = null;
-            if (irecipe instanceof ExtremeShapelessRecipe)
-                recipe = shapelessRecipe((ExtremeShapelessRecipe) irecipe);
+            if (irecipe instanceof ExtremeShapelessRecipe) recipe = shapelessRecipe((ExtremeShapelessRecipe) irecipe);
             else if (irecipe instanceof ShapelessOreRecipe)
                 recipe = forgeExtremeShapelessRecipe((ShapelessOreRecipe) irecipe);
 
-            if (recipe == null)
-                continue;
+            if (recipe == null) continue;
 
             if (recipe.contains(recipe.ingredients, ingredient)) {
                 recipe.setIngredientPermutation(recipe.ingredients, ingredient);
@@ -135,7 +136,7 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
     }
 
     private CachedExtremeShapelessRecipe shapelessRecipe(ExtremeShapelessRecipe recipe) {
-        if(recipe.recipeItems == null) //because some mod subclasses actually do this
+        if (recipe.recipeItems == null) // because some mod subclasses actually do this
             return null;
 
         return new CachedExtremeShapelessRecipe(recipe.recipeItems, recipe.getRecipeOutput());
@@ -144,9 +145,8 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
     public CachedExtremeShapelessRecipe forgeExtremeShapelessRecipe(ShapelessOreRecipe recipe) {
         ArrayList<Object> items = recipe.getInput();
 
-        for (Object item : items)
-            if (item instanceof List && ((List<?>) item).isEmpty())//ore handler, no ores
-                return null;
+        for (Object item : items) if (item instanceof List && ((List<?>) item).isEmpty())// ore handler, no ores
+            return null;
 
         return new CachedExtremeShapelessRecipe(items, recipe.getRecipeOutput());
     }
@@ -162,20 +162,17 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
     }
 
     @Override
-    public String getGuiTexture()
-    {
+    public String getGuiTexture() {
         return "avaritia:textures/gui/extreme_nei.png";
     }
 
     @Override
-    public boolean hasOverlay(GuiContainer gui, Container container, int recipe)
-    {
+    public boolean hasOverlay(GuiContainer gui, Container container, int recipe) {
         return RecipeInfo.hasDefaultOverlay(gui, "extreme");
     }
 
     @Override
-    public void drawBackground(int recipe)
-    {
+    public void drawBackground(int recipe) {
         GL11.glColor4f(1, 1, 1, 1);
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glDisable(GL11.GL_ALPHA_TEST);
@@ -186,14 +183,12 @@ public class ExtremeShapelessRecipeHandler extends ShapelessRecipeHandler{
     }
 
     @Override
-    public int recipiesPerPage()
-    {
+    public int recipiesPerPage() {
         return 1;
     }
 
     @Override
-    public Class<? extends GuiContainer> getGuiClass()
-    {
+    public Class<? extends GuiContainer> getGuiClass() {
         return GUIExtremeCrafting.class;
     }
 

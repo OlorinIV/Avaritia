@@ -1,24 +1,23 @@
 package fox.spiteful.avaritia.compat.botania;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import fox.spiteful.avaritia.Avaritia;
+import java.util.List;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-import java.util.List;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemInfinitatoCostume extends Item {
 
-    private static final String[] types = new String[]{"armstrong", "moon", "egbert", "francis"};
+    private static final String[] types = new String[] { "armstrong", "moon", "egbert", "francis" };
 
     @SideOnly(Side.CLIENT)
     public IIcon[] icons;
 
-    public ItemInfinitatoCostume(){
+    public ItemInfinitatoCostume() {
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
     }

@@ -1,6 +1,17 @@
 package fox.spiteful.avaritia.compat.forestry;
 
+import java.awt.*;
+import java.util.*;
+
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
+import net.minecraft.util.StatCollector;
+import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
+
 import com.mojang.authlib.GameProfile;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import forestry.api.apiculture.*;
@@ -9,18 +20,8 @@ import forestry.api.core.EnumTemperature;
 import forestry.api.core.IIconProvider;
 import forestry.api.genetics.*;
 import fox.spiteful.avaritia.items.LudicrousItems;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
-import net.minecraft.util.StatCollector;
-import net.minecraft.world.World;
-import net.minecraftforge.oredict.OreDictionary;
-
-import java.awt.*;
-import java.util.*;
 
 public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
-
 
     ANNOYING("annoying", "incommodus", BeeBranch.BALANCED, "SpitefulFox", 0x662D01, 0x777777, false),
     TEDIOUS("tedious", "longus", BeeBranch.BALANCED, "SpitefulFox", 0x662D01, 0x662D01, false),
@@ -50,7 +51,8 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
     private int primaryColor;
     private int secondaryColor;
 
-    GreedyBeeSpecies(String nombre, String genus, IClassification bran, String author, int mainColor, int otherColor, boolean dom, boolean secret, boolean shiny){
+    GreedyBeeSpecies(String nombre, String genus, IClassification bran, String author, int mainColor, int otherColor,
+            boolean dom, boolean secret, boolean shiny) {
         name = nombre;
         binomial = genus;
         branch = bran;
@@ -64,11 +66,12 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
         fancy = shiny;
     }
 
-    GreedyBeeSpecies(String nombre, String genus, IClassification bran, String author, int mainColor, int otherColor, boolean dom){
+    GreedyBeeSpecies(String nombre, String genus, IClassification bran, String author, int mainColor, int otherColor,
+            boolean dom) {
         this(nombre, genus, bran, author, mainColor, otherColor, dom, false, false);
     }
 
-    public static void buzz(){
+    public static void buzz() {
         ANNOYING.registerGenomeTemplate(Genomes.getBalanced());
         TEDIOUS.registerGenomeTemplate(Genomes.getTedious());
         INSUFFERABLE.registerGenomeTemplate(Genomes.getInsufferable());
@@ -92,32 +95,32 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
     private IIcon[][] icons;
 
     @Override
-    public String getUID(){
+    public String getUID() {
         return "avaritia." + name;
     }
 
     @Override
-    public String getName(){
+    public String getName() {
         return StatCollector.translateToLocal("avaritia.bee." + name);
     }
 
     @Override
-    public String getUnlocalizedName(){
+    public String getUnlocalizedName() {
         return "avaritia.bee." + name;
     }
 
     @Override
-    public String getBinomial(){
+    public String getBinomial() {
         return binomial;
     }
 
     @Override
-    public String getAuthority(){
+    public String getAuthority() {
         return authority;
     }
 
     @Override
-    public String getDescription(){
+    public String getDescription() {
         return StatCollector.translateToLocal("avaritia.bee." + name + ".desc");
     }
 
@@ -132,27 +135,27 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
     }
 
     @Override
-    public boolean isCounted(){
+    public boolean isCounted() {
         return isCounted;
     }
 
     @Override
-    public boolean isSecret(){
+    public boolean isSecret() {
         return isSecret;
     }
 
     @Override
-    public boolean hasEffect(){
+    public boolean hasEffect() {
         return fancy;
     }
 
     @Override
-    public EnumTemperature getTemperature(){
+    public EnumTemperature getTemperature() {
         return temperature;
     }
 
     @Override
-    public EnumHumidity getHumidity(){
+    public EnumHumidity getHumidity() {
         return humidity;
     }
 
@@ -165,7 +168,7 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
         return genomeTemplate;
     }
 
-    public void setGenome(IAllele[] genome){
+    public void setGenome(IAllele[] genome) {
         genomeTemplate = genome;
     }
 
@@ -173,7 +176,6 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
     public int getComplexity() {
         return 1 + getGeneticAdvancement(this, new ArrayList<IAllele>());
     }
-
 
     @Override
     public HashMap<ItemStack, Float> getProductChances() {
@@ -197,12 +199,12 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
 
     public void addProduct(ItemStack produce, float percentChance) {
         products.put(produce, percentChance);
-        legacyProducts.put(produce, (int)(percentChance * 100));
+        legacyProducts.put(produce, (int) (percentChance * 100));
     }
 
     public void addSpecialty(ItemStack produce, float percentChance) {
         specialties.put(produce, percentChance);
-        legacySpecialties.put(produce, (int)(percentChance * 100));
+        legacySpecialties.put(produce, (int) (percentChance * 100));
     }
 
     public void registerGenomeTemplate(IAllele[] genome) {
@@ -277,7 +279,9 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
             Collection<? extends IMutation> resultantMutations = getRoot().getCombinations(this);
             if (resultantMutations.size() > 0) {
                 IMutation[] candidates = resultantMutations.toArray(new IMutation[resultantMutations.size()]);
-                bounty.add(AlleleManager.alleleRegistry.getMutationNoteStack(researcher, candidates[world.rand.nextInt(candidates.length)]));
+                bounty.add(
+                        AlleleManager.alleleRegistry
+                                .getMutationNoteStack(researcher, candidates[world.rand.nextInt(candidates.length)]));
             }
         }
 
@@ -345,13 +349,18 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies, IIconProvider {
         IIcon body1 = itemMap.registerIcon("forestry:bees/default/body1");
 
         for (int i = 0; i < EnumBeeType.values().length; i++) {
-            if (EnumBeeType.values()[i] == EnumBeeType.NONE)
-                continue;
+            if (EnumBeeType.values()[i] == EnumBeeType.NONE) continue;
 
-            icons[i][0] = itemMap.registerIcon("forestry:bees/default/" + EnumBeeType.values()[i].toString().toLowerCase(Locale.ENGLISH) + ".outline");
-            icons[i][1] = (EnumBeeType.values()[i] != EnumBeeType.LARVAE) ? body1 : itemMap.registerIcon("forestry:bees/default/"
-                    + EnumBeeType.values()[i].toString().toLowerCase(Locale.ENGLISH) + ".body");
-            icons[i][2] = itemMap.registerIcon("forestry:bees/default/" + EnumBeeType.values()[i].toString().toLowerCase(Locale.ENGLISH) + ".body2");
+            icons[i][0] = itemMap.registerIcon(
+                    "forestry:bees/default/" + EnumBeeType.values()[i].toString().toLowerCase(Locale.ENGLISH)
+                            + ".outline");
+            icons[i][1] = (EnumBeeType.values()[i] != EnumBeeType.LARVAE) ? body1
+                    : itemMap.registerIcon(
+                            "forestry:bees/default/" + EnumBeeType.values()[i].toString().toLowerCase(Locale.ENGLISH)
+                                    + ".body");
+            icons[i][2] = itemMap.registerIcon(
+                    "forestry:bees/default/" + EnumBeeType.values()[i].toString().toLowerCase(Locale.ENGLISH)
+                            + ".body2");
         }
     }
 

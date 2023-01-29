@@ -1,12 +1,9 @@
 package fox.spiteful.avaritia.compat.forestry;
 
-import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.registry.GameRegistry;
-import forestry.api.recipes.RecipeManagers;
-import fox.spiteful.avaritia.Config;
-import fox.spiteful.avaritia.compat.Compat;
-import fox.spiteful.avaritia.crafting.Grinder;
-import fox.spiteful.avaritia.items.LudicrousItems;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
@@ -14,9 +11,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.EnumHelper;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameRegistry;
+import forestry.api.recipes.RecipeManagers;
+import fox.spiteful.avaritia.Config;
+import fox.spiteful.avaritia.compat.Compat;
+import fox.spiteful.avaritia.crafting.Grinder;
+import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Ranger {
 
@@ -38,8 +39,7 @@ public class Ranger {
         honeydew = Compat.getItem("Forestry", "honeydew");
         Item panel = Compat.getItem("Forestry", "craftingMaterial");
 
-        if(!Config.bees)
-            return;
+        if (!Config.bees) return;
 
         LudicrousItems.combs = new ItemComb();
         GameRegistry.registerItem(LudicrousItems.combs, "Combs");
@@ -61,7 +61,9 @@ public class Ranger {
         RecipeManagers.centrifugeManager.addRecipe(20, new ItemStack(LudicrousItems.combs, 1, 1), products);
 
         final float centrifugeChanceB = 1.0f;
-        RecipeManagers.centrifugeManager.addRecipe(20, new ItemStack(LudicrousItems.combs, 1, 0),
+        RecipeManagers.centrifugeManager.addRecipe(
+                20,
+                new ItemStack(LudicrousItems.combs, 1, 0),
                 Collections.singletonMap(new ItemStack(LudicrousItems.beesource, 1, 1), centrifugeChanceB));
 
         Grinder.catalyst.getInput().add(new ItemStack(panel, 1, 6));
