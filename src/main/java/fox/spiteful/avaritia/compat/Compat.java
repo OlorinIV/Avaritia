@@ -106,10 +106,10 @@ public class Compat {
         if (ae2) {
             try {
                 Item resource = getItem("appliedenergistics2", "item.ItemMultiMaterial");
-				
-				// 16m cell
+
+                // 16m cell
                 Grinder.catalyst.getInput().add(new ItemStack(resource, 1, 60));
-                
+
                 // Singularity
                 Grinder.catalyst.getInput().add(new ItemStack(resource, 1, 47));
 
