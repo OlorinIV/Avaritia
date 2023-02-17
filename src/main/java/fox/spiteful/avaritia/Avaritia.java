@@ -4,6 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -37,6 +38,8 @@ public class Avaritia {
 
     @SidedProxy(serverSide = "fox.spiteful.avaritia.CommonProxy", clientSide = "fox.spiteful.avaritia.ClientProxy")
     public static CommonProxy proxy;
+
+    public static final boolean isHodgepodgeLoaded = Loader.isModLoaded("hodgepodge");
 
     public static CreativeTabs tab = new CreativeTabs("avaritia") {
 

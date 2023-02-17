@@ -44,4 +44,7 @@ dependencies {
     compileOnly("curse.maven:witchery-69673:2234410") {
         transitive = false
     }
+    compileOnly("com.github.GTNewHorizons:Hodgepodge:2.0.34:dev") {
+        transitive = false
+    }
 }

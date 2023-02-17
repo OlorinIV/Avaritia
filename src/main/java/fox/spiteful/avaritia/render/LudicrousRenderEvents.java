@@ -9,9 +9,12 @@ import net.minecraftforge.client.event.TextureStitchEvent;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 
+import com.mitchej123.hodgepodge.textures.IPatchedTextureAtlasSprite;
+
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.Phase;
 import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
+import fox.spiteful.avaritia.Avaritia;
 
 public class LudicrousRenderEvents {
 
@@ -61,10 +64,10 @@ public class LudicrousRenderEvents {
     public void pushTheCosmicFancinessToTheLimit(RenderTickEvent event) {
         if (event.phase == Phase.START) {
             cosmicUVs = BufferUtils.createFloatBuffer(4 * cosmicIcons.length);
-            IIcon icon;
-            for (int i = 0; i < cosmicIcons.length; i++) {
-                icon = cosmicIcons[i];
-
+            for (IIcon icon : cosmicIcons) {
+                if (Avaritia.isHodgepodgeLoaded && icon instanceof IPatchedTextureAtlasSprite) {
+                    ((IPatchedTextureAtlasSprite) icon).markNeedsAnimationUpdate();
+                }
                 cosmicUVs.put(icon.getMinU());
                 cosmicUVs.put(icon.getMinV());
                 cosmicUVs.put(icon.getMaxU());
