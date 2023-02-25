@@ -326,6 +326,7 @@ public class ItemArmorInfinity extends ItemArmor implements ICosmicRenderItem, I
                         boolean swimming = player.isInsideOfMaterial(Material.water) || player.isInWater();
                         if (player.onGround || flying || swimming) {
                             boolean sneaking = player.isSneaking();
+                            player.stepHeight = player.isSneaking() ? 0.5F : 1F;
 
                             float speed = 0.15f * (flying ? 1.1f : 1.0f)
                             // * (swimming ? 1.2f : 1.0f)
