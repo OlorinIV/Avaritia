@@ -66,8 +66,6 @@ public class Ranger {
                 new ItemStack(LudicrousItems.combs, 1, 0),
                 Collections.singletonMap(new ItemStack(LudicrousItems.beesource, 1, 1), centrifugeChanceB));
 
-        Grinder.catalyst.getInput().add(new ItemStack(panel, 1, 6));
-        Grinder.catalyst.getInput().add(new ItemStack(LudicrousItems.beesource, 1, 0));
     }
 
 }

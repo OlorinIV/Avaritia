@@ -152,10 +152,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void apply() {
-
-            Grinder.catalyst.getInput().add(ingredient);
-        }
+        public void apply() {}
 
         @Override
         public boolean canUndo() {
@@ -163,9 +160,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void undo() {
-            Grinder.catalyst.getInput().remove(ingredient);
-        }
+        public void undo() {}
 
         @Override
         public String describe() {
@@ -204,11 +199,6 @@ public class ExtremeCrafting {
 
         @Override
         public void apply() {
-
-            Grinder.catalyst.getInput().add(ingredient);
-            for (Object ingredient : Grinder.catalyst.getInput()) {
-
-            }
         }
 
         @Override
@@ -218,7 +208,6 @@ public class ExtremeCrafting {
 
         @Override
         public void undo() {
-            Grinder.catalyst.getInput().remove(ingredient);
         }
 
         @Override

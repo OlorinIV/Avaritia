@@ -23,13 +23,6 @@ public class Tsundere {
     public static Item costumes;
 
     public static void baka() throws Compat.ItemNotFoundException {
-        Item resource = Compat.getItem("Botania", "manaResource");
-        Block storage = Compat.getBlock("Botania", "storage");
-        ItemStack terra = new ItemStack(storage, 1, 1);
-        ItemStack gaia = new ItemStack(resource, 1, 5);
-
-        Grinder.catalyst.getInput().add(terra);
-        Grinder.catalyst.getInput().add(gaia);
 
         BotaniaAPI.registerSubTile("asgardandelion", SubTileCheaty.class);
         BotaniaAPI.registerSubTileSignature(SubTileCheaty.class, new Signature("asgardandelion"));

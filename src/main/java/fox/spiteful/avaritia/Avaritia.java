@@ -85,7 +85,6 @@ public class Avaritia {
         Gregorizer.balance();
         if (Config.craftingOnly) return;
         Mincer.countThoseCalories();
-        Grinder.lastMinuteChanges();
         Achievements.achieve();
         PotionHelper.healthInspection();
         proxy.theAfterPretty();

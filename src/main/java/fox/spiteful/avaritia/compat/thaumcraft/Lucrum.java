@@ -45,8 +45,6 @@ public class Lucrum {
         LudicrousItems.bigPearl = new ItemBigPearl();
         GameRegistry.registerItem(LudicrousItems.bigPearl, "big_pearl");
 
-        Grinder.catalyst.getInput().add(new ItemStack(LudicrousItems.bigPearl));
-
         ThaumcraftApi.registerObjectTag(
                 new ItemStack(LudicrousItems.resource, 1, 1),
                 new AspectList().add(ULTRA_DEATH, 1).add(Aspect.ENERGY, 8).add(Aspect.CRYSTAL, 32));
@@ -185,20 +183,6 @@ public class Lucrum {
                                 new ResearchPage[] { new ResearchPage("avaritia.research_page.AKASHIC.1"),
                                         new ResearchPage(akashic_recipe) })
                         .setParents(new String[] { "BIG_PEARL" }).setConcealed().setSecondary().registerResearchItem();
-
-        if (Loader.isModLoaded("ThaumicTinkerer")) {
-            try {
-                boolean kami = Class.forName("thaumic.tinkerer.common.core.handler.ConfigHandler")
-                        .getField("enableKami").getBoolean(null);
-                if (kami) {
-                    // because ichorium get unificated from gt
-                    Item kamiResource = Compat.getItem("gregtech", ":gt.metaitem.01");
-                    Grinder.catalyst.getInput().add(new ItemStack(kamiResource, 1, 11978));
-                }
-            } catch (Exception e) {
-                Lumberjack.log(Level.INFO, e, "Avaritia couldn't find the last research it needs to unlock Ichor.");
-            }
-        }
 
     }
 
