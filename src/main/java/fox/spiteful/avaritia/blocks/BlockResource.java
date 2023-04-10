@@ -11,10 +11,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fox.spiteful.avaritia.Avaritia;
+import gregtech.api.GregTech_API;
 
 public class BlockResource extends Block {
 
@@ -61,5 +64,21 @@ public class BlockResource extends Block {
     @Override
     public boolean canEntityDestroy(IBlockAccess world, int x, int y, int z, Entity entity) {
         return false;
+    }
+
+    @Override
+    @Optional.Method(modid = "gregtech")
+    public void onBlockAdded(World aWorld, int aX, int aY, int aZ) {
+        if (GregTech_API.isMachineBlock(this, aWorld.getBlockMetadata(aX, aY, aZ))) {
+            GregTech_API.causeMachineUpdate(aWorld, aX, aY, aZ);
+        }
+    }
+
+    @Override
+    @Optional.Method(modid = "gregtech")
+    public void breakBlock(World aWorld, int aX, int aY, int aZ, Block aBlock, int aMetaData) {
+        if (GregTech_API.isMachineBlock(this, aMetaData)) {
+            GregTech_API.causeMachineUpdate(aWorld, aX, aY, aZ);
+        }
     }
 }
