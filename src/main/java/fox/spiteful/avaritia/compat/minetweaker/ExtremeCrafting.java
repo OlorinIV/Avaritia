@@ -17,7 +17,6 @@ import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.crafting.ExtremeShapedOreRecipe;
-import fox.spiteful.avaritia.crafting.Grinder;
 
 @ZenClass("mods.avaritia.ExtremeCrafting")
 public class ExtremeCrafting {
@@ -198,8 +197,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void apply() {
-        }
+        public void apply() {}
 
         @Override
         public boolean canUndo() {
@@ -207,8 +205,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void undo() {
-        }
+        public void undo() {}
 
         @Override
         public String describe() {

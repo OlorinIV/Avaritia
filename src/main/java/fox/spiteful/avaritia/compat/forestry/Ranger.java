@@ -16,7 +16,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import fox.spiteful.avaritia.Config;
 import fox.spiteful.avaritia.compat.Compat;
-import fox.spiteful.avaritia.crafting.Grinder;
 import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Ranger {

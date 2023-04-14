@@ -20,9 +20,7 @@ import fox.spiteful.avaritia.compat.minetweaker.Tweak;
 import fox.spiteful.avaritia.compat.nei.NotEnough;
 import fox.spiteful.avaritia.compat.tails.InfiniteFoxes;
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
-import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import fox.spiteful.avaritia.crafting.Grinder;
 import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Compat {
