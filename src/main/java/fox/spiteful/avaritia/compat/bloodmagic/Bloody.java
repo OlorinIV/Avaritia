@@ -1,21 +1,16 @@
 package fox.spiteful.avaritia.compat.bloodmagic;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.compat.Compat;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import fox.spiteful.avaritia.crafting.Grinder;
 import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Bloody {
 
     public static void bloodlett() throws Compat.ItemNotFoundException {
-        Block crystal = Compat.getBlock("AWWayofTime", "blockCrystal");
-        ItemStack cluster = new ItemStack(crystal, 1, 0);
-        Grinder.catalyst.getInput().add(cluster);
 
         LudicrousItems.armok_orb = new ItemOrbArmok();
         GameRegistry.registerItem(LudicrousItems.armok_orb, "Orb_Armok");

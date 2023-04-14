@@ -17,7 +17,6 @@ import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.crafting.ExtremeShapedOreRecipe;
-import fox.spiteful.avaritia.crafting.Grinder;
 
 @ZenClass("mods.avaritia.ExtremeCrafting")
 public class ExtremeCrafting {
@@ -152,10 +151,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void apply() {
-
-            Grinder.catalyst.getInput().add(ingredient);
-        }
+        public void apply() {}
 
         @Override
         public boolean canUndo() {
@@ -163,9 +159,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void undo() {
-            Grinder.catalyst.getInput().remove(ingredient);
-        }
+        public void undo() {}
 
         @Override
         public String describe() {
@@ -203,13 +197,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void apply() {
-
-            Grinder.catalyst.getInput().add(ingredient);
-            for (Object ingredient : Grinder.catalyst.getInput()) {
-
-            }
-        }
+        public void apply() {}
 
         @Override
         public boolean canUndo() {
@@ -217,9 +205,7 @@ public class ExtremeCrafting {
         }
 
         @Override
-        public void undo() {
-            Grinder.catalyst.getInput().remove(ingredient);
-        }
+        public void undo() {}
 
         @Override
         public String describe() {

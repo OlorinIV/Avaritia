@@ -6,8 +6,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 
-import org.apache.logging.log4j.Level;
-
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -17,13 +15,10 @@ import thaumcraft.api.wands.WandCap;
 import thaumcraft.api.wands.WandRod;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
-import fox.spiteful.avaritia.Lumberjack;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.compat.Compat;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import fox.spiteful.avaritia.crafting.Grinder;
 import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Lucrum {
@@ -44,8 +39,6 @@ public class Lucrum {
         GameRegistry.registerItem(LudicrousItems.akashic_record, "Akashic_Record");
         LudicrousItems.bigPearl = new ItemBigPearl();
         GameRegistry.registerItem(LudicrousItems.bigPearl, "big_pearl");
-
-        Grinder.catalyst.getInput().add(new ItemStack(LudicrousItems.bigPearl));
 
         ThaumcraftApi.registerObjectTag(
                 new ItemStack(LudicrousItems.resource, 1, 1),
@@ -185,20 +178,6 @@ public class Lucrum {
                                 new ResearchPage[] { new ResearchPage("avaritia.research_page.AKASHIC.1"),
                                         new ResearchPage(akashic_recipe) })
                         .setParents(new String[] { "BIG_PEARL" }).setConcealed().setSecondary().registerResearchItem();
-
-        if (Loader.isModLoaded("ThaumicTinkerer")) {
-            try {
-                boolean kami = Class.forName("thaumic.tinkerer.common.core.handler.ConfigHandler")
-                        .getField("enableKami").getBoolean(null);
-                if (kami) {
-                    // because ichorium get unificated from gt
-                    Item kamiResource = Compat.getItem("gregtech", ":gt.metaitem.01");
-                    Grinder.catalyst.getInput().add(new ItemStack(kamiResource, 1, 11978));
-                }
-            } catch (Exception e) {
-                Lumberjack.log(Level.INFO, e, "Avaritia couldn't find the last research it needs to unlock Ichor.");
-            }
-        }
 
     }
 

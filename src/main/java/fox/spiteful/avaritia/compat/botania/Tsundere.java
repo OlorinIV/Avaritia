@@ -15,7 +15,6 @@ import fox.spiteful.avaritia.compat.Compat;
 import fox.spiteful.avaritia.compat.nei.NotEnough;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.crafting.ExtremeShapedRecipe;
-import fox.spiteful.avaritia.crafting.Grinder;
 import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Tsundere {
@@ -23,13 +22,6 @@ public class Tsundere {
     public static Item costumes;
 
     public static void baka() throws Compat.ItemNotFoundException {
-        Item resource = Compat.getItem("Botania", "manaResource");
-        Block storage = Compat.getBlock("Botania", "storage");
-        ItemStack terra = new ItemStack(storage, 1, 1);
-        ItemStack gaia = new ItemStack(resource, 1, 5);
-
-        Grinder.catalyst.getInput().add(terra);
-        Grinder.catalyst.getInput().add(gaia);
 
         BotaniaAPI.registerSubTile("asgardandelion", SubTileCheaty.class);
         BotaniaAPI.registerSubTileSignature(SubTileCheaty.class, new Signature("asgardandelion"));
