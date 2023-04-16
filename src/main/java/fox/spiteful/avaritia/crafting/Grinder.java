@@ -4,14 +4,19 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.Config;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Grinder {
+
+    public static ShapelessOreRecipe catalyst;
 
     public static void artsAndCrafts() {
 
@@ -186,6 +191,18 @@ public class Grinder {
                 new ItemStack(LudicrousItems.resource, 1, 4),
                 'X',
                 new ItemStack(LudicrousItems.resource, 1, 5));
+
+        catalyst = ExtremeCraftingManager.getInstance().addShapelessOreRecipe(
+                new ItemStack(LudicrousItems.resource, 1, 5),
+                new ItemStack(Blocks.emerald_block, 1),
+                new ItemStack(LudicrousItems.singularity, 1, 0),
+                new ItemStack(LudicrousItems.singularity, 1, 1),
+                new ItemStack(LudicrousItems.singularity, 1, 2),
+                new ItemStack(LudicrousItems.singularity, 1, 3),
+                new ItemStack(LudicrousItems.singularity, 1, 4),
+                new ItemStack(LudicrousItems.ultimate_stew),
+                new ItemStack(LudicrousItems.cosmic_meatballs),
+                new ItemStack(LudicrousItems.endest_pearl));
 
         ItemStack result = new ItemStack(LudicrousItems.infinity_pickaxe, 1);
         result.addEnchantment(Enchantment.fortune, 10);
