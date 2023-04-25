@@ -19,7 +19,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Mantle:0.3.6:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.2.45-GTNH:dev") {
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.3.45-GTNH:dev") {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.27-GTNH:dev") {
