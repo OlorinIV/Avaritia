@@ -14,16 +14,16 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.api.internal.IGuiLexiconEntry;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.api.lexicon.LexiconRecipeMappings;
-import vazkii.botania.client.core.helper.RenderHelper;
-import vazkii.botania.common.lexicon.page.PageRecipe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fox.spiteful.avaritia.crafting.ExtremeShapedOreRecipe;
 import fox.spiteful.avaritia.crafting.ExtremeShapedRecipe;
 import fox.spiteful.avaritia.crafting.ExtremeShapelessRecipe;
+import vazkii.botania.api.internal.IGuiLexiconEntry;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.lexicon.LexiconRecipeMappings;
+import vazkii.botania.client.core.helper.RenderHelper;
+import vazkii.botania.common.lexicon.page.PageRecipe;
 
 public class PageLudicrousRecipe extends PageRecipe {
 

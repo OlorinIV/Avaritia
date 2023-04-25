@@ -1,7 +1,7 @@
 package fox.spiteful.avaritia.compat.ticon;
 
-import tconstruct.library.client.TConstructClientRegistry;
 import fox.spiteful.avaritia.Lumberjack;
+import tconstruct.library.client.TConstructClientRegistry;
 
 public class TonkersClient {
 

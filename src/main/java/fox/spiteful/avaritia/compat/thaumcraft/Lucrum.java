@@ -6,6 +6,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+import fox.spiteful.avaritia.blocks.LudicrousBlocks;
+import fox.spiteful.avaritia.compat.Compat;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import fox.spiteful.avaritia.items.LudicrousItems;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -15,11 +20,6 @@ import thaumcraft.api.wands.WandCap;
 import thaumcraft.api.wands.WandRod;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import cpw.mods.fml.common.registry.GameRegistry;
-import fox.spiteful.avaritia.blocks.LudicrousBlocks;
-import fox.spiteful.avaritia.compat.Compat;
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class Lucrum {
 

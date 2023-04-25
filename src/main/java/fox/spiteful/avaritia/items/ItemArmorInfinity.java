@@ -24,14 +24,6 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
-import thaumcraft.api.IGoggles;
-import thaumcraft.api.IVisDiscountGear;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.nodes.IRevealer;
-import vazkii.botania.api.item.IManaProficiencyArmor;
-import vazkii.botania.api.item.IPhantomInkable;
-import vazkii.botania.api.mana.IManaDiscountArmor;
-
 import com.google.common.collect.Multimap;
 
 import cpw.mods.fml.common.Optional;
@@ -46,6 +38,13 @@ import fox.spiteful.avaritia.compat.Compat;
 import fox.spiteful.avaritia.entity.EntityImmortalItem;
 import fox.spiteful.avaritia.render.ICosmicRenderItem;
 import fox.spiteful.avaritia.render.ModelArmorInfinity;
+import thaumcraft.api.IGoggles;
+import thaumcraft.api.IVisDiscountGear;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.nodes.IRevealer;
+import vazkii.botania.api.item.IManaProficiencyArmor;
+import vazkii.botania.api.item.IPhantomInkable;
+import vazkii.botania.api.mana.IManaDiscountArmor;
 
 @Optional.InterfaceList({ @Optional.Interface(iface = "thaumcraft.api.IGoggles", modid = "Thaumcraft"),
         @Optional.Interface(iface = "thaumcraft.api.nodes.IRevealer", modid = "Thaumcraft"),

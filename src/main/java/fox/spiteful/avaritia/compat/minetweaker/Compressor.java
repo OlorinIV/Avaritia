@@ -1,19 +1,18 @@
 package fox.spiteful.avaritia.compat.minetweaker;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+
+import fox.spiteful.avaritia.crafting.CompressOreRecipe;
+import fox.spiteful.avaritia.crafting.CompressorManager;
+import fox.spiteful.avaritia.crafting.CompressorRecipe;
 import minetweaker.IUndoableAction;
 import minetweaker.MineTweakerAPI;
 import minetweaker.api.item.IIngredient;
 import minetweaker.api.item.IItemStack;
 import minetweaker.api.oredict.IOreDictEntry;
-
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
-import fox.spiteful.avaritia.crafting.CompressOreRecipe;
-import fox.spiteful.avaritia.crafting.CompressorManager;
-import fox.spiteful.avaritia.crafting.CompressorRecipe;
 
 @ZenClass("mods.avaritia.Compressor")
 public class Compressor {

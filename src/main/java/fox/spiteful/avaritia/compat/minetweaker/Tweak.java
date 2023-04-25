@@ -1,7 +1,7 @@
 package fox.spiteful.avaritia.compat.minetweaker;
 
-import minetweaker.MineTweakerAPI;
 import fox.spiteful.avaritia.Config;
+import minetweaker.MineTweakerAPI;
 
 public class Tweak {
 

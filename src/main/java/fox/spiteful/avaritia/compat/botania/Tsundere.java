@@ -7,8 +7,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.OreDictionary;
 
-import vazkii.botania.api.BotaniaAPI;
-import vazkii.botania.api.recipe.RecipeRuneAltar;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.compat.Compat;
@@ -16,6 +14,8 @@ import fox.spiteful.avaritia.compat.nei.NotEnough;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.crafting.ExtremeShapedRecipe;
 import fox.spiteful.avaritia.items.LudicrousItems;
+import vazkii.botania.api.BotaniaAPI;
+import vazkii.botania.api.recipe.RecipeRuneAltar;
 
 public class Tsundere {
 
