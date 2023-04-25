@@ -31,9 +31,6 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:CraftTweaker:3.2.11:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:ZenScript:1.0.1-GTNH:dev") {
-        transitive = false
-    }
 
 	compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") {
         transitive = false
