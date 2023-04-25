@@ -1,5 +1,7 @@
 package fox.spiteful.avaritia.compat;
 
+import fox.spiteful.avaritia.compat.ticon.Tonkers;
+import fox.spiteful.avaritia.crafting.Grinder;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -138,6 +140,19 @@ public class Compat {
                 Lumberjack.log(Level.INFO, "Avaritia decided to use a Fallen Kanade instead.");
                 e.printStackTrace();
                 blood = false;
+            }
+        }
+
+        if (ticon) {
+            try {
+                Block metal = getBlock("TConstruct", "MetalBlock");
+                ItemStack menomena = new ItemStack(metal, 1, 2);
+                Grinder.catalyst.getInput().add(menomena);
+                Tonkers.buildstruct();
+            } catch (Throwable e) {
+                Lumberjack.log(Level.INFO, "Avaritia fell in the smeltery.");
+                e.printStackTrace();
+                ticon = false;
             }
         }
 
