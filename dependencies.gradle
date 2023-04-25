@@ -28,7 +28,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.4.0:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:CraftTweaker:3.2.11:dev") {
+    compileOnly("com.github.GTNewHorizons:CraftTweaker:3.2.12:dev") {
         transitive = false
     }
 
@@ -47,7 +47,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Hodgepodge:2.2.8:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:GT5-Unofficial:5.09.42.79:dev") {
+    compileOnly("com.github.GTNewHorizons:GT5-Unofficial:5.09.42.80:dev") {
         transitive = false
     }
 }
