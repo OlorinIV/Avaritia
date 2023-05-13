@@ -396,6 +396,42 @@ public class Grinder {
                 new ItemStack(LudicrousItems.singularity, 1, 4),
                 1215,
                 new ItemStack(Blocks.quartz_block, 1));
+        if (Config.copper && !OreDictionary.getOres("blockCopper").isEmpty()) {
+            CompressorManager.addOreRecipe(new ItemStack(LudicrousItems.singularity, 1, 5), 3648, "blockCopper");
+            catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 5));
+        }
+        if (Config.tin && !OreDictionary.getOres("blockTin").isEmpty()) {
+            CompressorManager.addOreRecipe(new ItemStack(LudicrousItems.singularity, 1, 6), 3648, "blockTin");
+            catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 6));
+        }
+        if (Config.lead && !OreDictionary.getOres("blockLead").isEmpty()) {
+            CompressorManager.addOreRecipe(new ItemStack(LudicrousItems.singularity, 1, 7), 3648, "blockLead");
+            catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 7));
+        }
+        if (Config.silver && !OreDictionary.getOres("blockSilver").isEmpty()) {
+            CompressorManager.addOreRecipe(new ItemStack(LudicrousItems.singularity, 1, 8), 7296, "blockSilver");
+            catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 8));
+        }
+        if (Config.nickel && !OreDictionary.getOres("blockNickel").isEmpty()) {
+            CompressorManager.addOreRecipe(new ItemStack(LudicrousItems.singularity, 1, 9), 3648, "blockNickel");
+            catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 9));
+        }
+        if (Config.enderium && !OreDictionary.getOres("blockEnderium").isEmpty()) {
+            CompressorManager.addOreRecipe(new ItemStack(LudicrousItems.singularity, 1, 10), 608, "blockEnderium");
+            catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 10));
+        }
+        if (Config.steel && !OreDictionary.getOres("blockSteel").isEmpty()) {
+            catalyst.getInput().add(OreDictionary.getOres("blockSteel"));
+        }
+        if (Config.metallurgy && !OreDictionary.getOres("ingotTartarite").isEmpty()) {
+            catalyst.getInput().add(OreDictionary.getOres("ingotTartarite"));
+        }
+        if (Config.numanuma && !OreDictionary.getOres("blockIronCompressed").isEmpty()) {
+            catalyst.getInput().add(OreDictionary.getOres("blockIronCompressed"));
+        }
+        if (Config.darksteel && !OreDictionary.getOres("blockDarkSteel").isEmpty()) {
+            catalyst.getInput().add(OreDictionary.getOres("blockDarkSteel"));
+        }
 
         if (Config.endStone) ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 new ItemStack(LudicrousItems.endest_pearl),
