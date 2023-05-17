@@ -6,6 +6,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import tconstruct.library.TConstructRegistry;
@@ -89,6 +90,22 @@ public class Tonkers {
         TonkersEvents events = new TonkersEvents();
         MinecraftForge.EVENT_BUS.register(events);
         FMLCommonHandler.instance().bus().register(events);
+
+        // extra modifiers from catalyst
+        ModifyBuilder.registerModifier(
+                new ModExtraModifier(new ItemStack[] { new ItemStack(LudicrousItems.resource, 1, 5) }, "AvaritiaFree") {
+
+                    @Override
+                    public void modify(ItemStack[] recipe, ItemStack input) {
+                        NBTTagCompound tags = this.getModifierTag(input);
+                        tags.setBoolean(key, true);
+                        int modifiers = tags.getInteger("Modifiers");
+                        modifiers += 5;
+                        tags.setInteger("Modifiers", modifiers);
+                    }
+                });
+
+        if (Loader.isModLoaded("dreamcraft")) return;
 
         // recipes
         ItemStack ingot = new ItemStack(LudicrousItems.resource, 1, 6);
@@ -356,20 +373,6 @@ public class Tonkers {
                 " XXX",
                 'X',
                 ingot);
-
-        // extra modifiers from catalyst
-        ModifyBuilder.registerModifier(
-                new ModExtraModifier(new ItemStack[] { new ItemStack(LudicrousItems.resource, 1, 5) }, "AvaritiaFree") {
-
-                    @Override
-                    public void modify(ItemStack[] recipe, ItemStack input) {
-                        NBTTagCompound tags = this.getModifierTag(input);
-                        tags.setBoolean(key, true);
-                        int modifiers = tags.getInteger("Modifiers");
-                        modifiers += 5;
-                        tags.setInteger("Modifiers", modifiers);
-                    }
-                });
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getBolt(neutroniumId, neutroniumId),
