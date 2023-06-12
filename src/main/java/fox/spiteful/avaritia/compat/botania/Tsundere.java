@@ -5,12 +5,10 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.oredict.OreDictionary;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.compat.Compat;
-import fox.spiteful.avaritia.compat.nei.NotEnough;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.crafting.ExtremeShapedRecipe;
 import fox.spiteful.avaritia.items.LudicrousItems;
@@ -71,11 +69,6 @@ public class Tsundere {
         GameRegistry.registerTileEntity(TileInfinitato.class, "Avaritia_Infinitato");
         costumes = new ItemInfinitatoCostume();
         GameRegistry.registerItem(costumes, "costumes");
-        if (Compat.nei) {
-            try {
-                NotEnough.hide(new ItemStack(costumes, 1, OreDictionary.WILDCARD_VALUE));
-            } catch (Throwable e) {}
-        }
 
         Block potato = Compat.getBlock("Botania", "tinyPotato");
 
