@@ -8,7 +8,7 @@ import fox.spiteful.avaritia.compat.botania.ItemInfinitatoCostume;
 import fox.spiteful.avaritia.compat.botania.Tsundere;
 
 @SuppressWarnings("unused")
-public class NEI_Avaritia_Config implements IConfigureNEI {
+public class NEIAvaritiaConfig implements IConfigureNEI {
 
     @Override
     public void loadConfig() {
