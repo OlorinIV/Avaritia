@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemInfinitatoCostume extends Item {
 
-    private static final String[] types = new String[] { "armstrong", "moon", "egbert", "francis" };
+    public static final String[] types = new String[] { "armstrong", "moon", "egbert", "francis" };
 
     @SideOnly(Side.CLIENT)
     public IIcon[] icons;

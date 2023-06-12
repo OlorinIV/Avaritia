@@ -17,7 +17,6 @@ import fox.spiteful.avaritia.compat.bloodmagic.Bloody;
 import fox.spiteful.avaritia.compat.botania.Tsundere;
 import fox.spiteful.avaritia.compat.forestry.Ranger;
 import fox.spiteful.avaritia.compat.minetweaker.Tweak;
-import fox.spiteful.avaritia.compat.nei.NotEnough;
 import fox.spiteful.avaritia.compat.tails.InfiniteFoxes;
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
@@ -64,14 +63,6 @@ public class Compat {
     }
 
     public static void compatify() {
-        if (nei) {
-            try {
-                NotEnough.items();
-            } catch (Throwable e) {
-                Lumberjack.log(Level.INFO, e, "Avaritia had Too Many Items.");
-            }
-        }
-
         if (tweak) {
             try {
                 Tweak.registrate();
