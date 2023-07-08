@@ -4,6 +4,7 @@ import net.minecraft.item.ItemStack;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
+import fox.spiteful.avaritia.compat.Compat;
 import fox.spiteful.avaritia.compat.botania.ItemInfinitatoCostume;
 import fox.spiteful.avaritia.compat.botania.Tsundere;
 
@@ -22,7 +23,7 @@ public class NEIAvaritiaConfig implements IConfigureNEI {
         API.registerUsageHandler(shapeless);
         API.registerUsageHandler(compress);
 
-        if (Tsundere.costumes != null) {
+        if (Compat.botan) {
             for (int i = 0; i < ItemInfinitatoCostume.types.length; i++) {
                 API.hideItem(new ItemStack(Tsundere.costumes, 1, i));
             }
