@@ -41,6 +41,9 @@ public class CosmicRenderShenanigans {
                     scale = 25.0f;
                 }
 
+                int time2 = ARBShaderObjects.glGetUniformLocationARB(shader, "time2");
+                ARBShaderObjects.glUniform1fARB(time2, mc.thePlayer.ticksExisted);
+
                 int x = ARBShaderObjects.glGetUniformLocationARB(shader, "yaw");
                 ARBShaderObjects.glUniform1fARB(x, yaw);
 
