@@ -382,20 +382,11 @@ public class Grinder {
                 'W',
                 "logWood");
 
-        CompressorManager
-                .addRecipe(new ItemStack(LudicrousItems.singularity, 1, 0), 400, new ItemStack(Blocks.iron_block));
-        CompressorManager
-                .addRecipe(new ItemStack(LudicrousItems.singularity, 1, 1), 200, new ItemStack(Blocks.gold_block, 1));
-        CompressorManager
-                .addRecipe(new ItemStack(LudicrousItems.singularity, 1, 2), 400, new ItemStack(Blocks.lapis_block, 1));
-        CompressorManager.addRecipe(
-                new ItemStack(LudicrousItems.singularity, 1, 3),
-                500,
-                new ItemStack(Blocks.redstone_block, 1));
-        CompressorManager.addRecipe(
-                new ItemStack(LudicrousItems.singularity, 1, 4),
-                300,
-                new ItemStack(Blocks.quartz_block, 1));
+        CompressorManager.addRecipe(new ItemStack(LudicrousItems.singularity, 1, 0), 400, new ItemStack(Blocks.iron_block, 1));
+        CompressorManager.addRecipe(new ItemStack(LudicrousItems.singularity, 1, 1), 200, new ItemStack(Blocks.gold_block, 1));
+        CompressorManager.addRecipe(new ItemStack(LudicrousItems.singularity, 1, 2), 400, new ItemStack(Blocks.lapis_block, 1));
+        CompressorManager.addRecipe(new ItemStack(LudicrousItems.singularity, 1, 3), 500, new ItemStack(Blocks.redstone_block, 1));
+        CompressorManager.addRecipe(new ItemStack(LudicrousItems.singularity, 1, 4), 300, new ItemStack(Blocks.quartz_block, 1));
         if (Config.copper && !OreDictionary.getOres("blockCopper").isEmpty()) {
             CompressorManager.addOreRecipe(new ItemStack(LudicrousItems.singularity, 1, 5), 400, "blockCopper");
             catalyst.getInput().add(new ItemStack(LudicrousItems.singularity, 1, 5));
